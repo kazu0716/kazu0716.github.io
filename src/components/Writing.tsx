@@ -13,7 +13,7 @@ export default function Writing() {
   return (
     <Section id="writing" title="Writing">
       <p className="mb-5 max-w-[60ch] text-cream-2">
-        Articles, blog posts, papers, and patents.
+        Articles, blog posts, customer stories, papers, and patents.
       </p>
       <ul className="flex flex-col">
         {writing.map((item, idx) => (
