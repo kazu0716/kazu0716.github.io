@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Experience from "../components/Experience";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import OpenSource from "../components/OpenSource";
+import Writing from "../components/Writing";
+import Education from "../components/Education";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+---
+
+<Layout title="Kazuki Odo — Staff Software Engineer">
+  <Nav />
+  <main id="top" class="relative z-10 mx-auto max-w-[960px] px-[clamp(20px,4vw,40px)]">
+    <Hero />
+    <About />
+    <Experience />
+    <Skills />
+    <Projects />
+    <OpenSource />
+    <Writing />
+    <Education />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
