@@ -339,6 +339,15 @@ export const writing: WritingItem[] = [
     lang: "ja",
   },
   {
+    title:
+      "DMM.com：これからのビジネスを担う動画配信サービスの提供と、データ分析基盤のモダナイズを Google Cloud で実施",
+    url: "https://cloud.google.com/blog/ja/topics/customers/dmmcom-modernising-the-data-analytics-infrastructure-with-google-cloud",
+    outlet: "Google Cloud Blog — Customer Story",
+    date: "2023-04",
+    kind: "Article",
+    lang: "ja",
+  },
+  {
     title: "Google Cloud で、決まった時刻にjobを実行する、2つの方法",
     url: "https://zenn.dev/google_cloud_jp/articles/e35fbe793efb5b",
     outlet: "Zenn (Google Cloud Japan)",
