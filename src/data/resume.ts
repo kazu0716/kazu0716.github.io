@@ -93,9 +93,8 @@ export const experience: Experience[] = [
     period: "Oct 2025 — Present",
     location: "Tokyo",
     highlights: [
-      "Build and operate 1,000+ GPUs of training infrastructure across AWS, GCP, and on-prem with a three-person platform team — everything managed as code.",
-      "Stood up a 240-GPU (NVIDIA H200) Slurm cluster on Google Cloud in two weeks and have run it in production since, alongside a SageMaker HyperPod GPU cluster on AWS.",
-      "Scaled shared training storage from 36 TB to 504 TB of Lustre while in production, and built cross-cloud data pipelines spanning AWS, GCP, and Azure.",
+      "Build and operate 1,000+ GPUs of training infrastructure across AWS, GCP, and on-prem with a three-person platform team — from standing up a 240-GPU (NVIDIA H200) Slurm cluster on Google Cloud in two weeks, to scaling Lustre storage from 36 TB to 504 TB in production and running cross-cloud data pipelines — everything managed as code.",
+      "Develop dataset-management software in Go — gRPC / REST services that automate dataset download, placement, and cleanup across every cluster — plus high-throughput downloaders and streaming data loaders for large-scale video training data.",
       "Keep large GPU fleets reliable with a small team: observability as code, incident response, self-healing node recovery, and runbook automation.",
     ],
   },
@@ -107,8 +106,9 @@ export const experience: Experience[] = [
     location: "Tokyo",
     highlights: [
       "Maintained and improved Splunk Cloud infrastructure across AWS, GCP, and Azure.",
-      "Automated operational workflows and improved system reliability.",
-      "Supported customer environments and collaborated with account teams and solution engineers.",
+      "Designed the Professional Services delivery menu for provisioning ISMAP-compliant Splunk Cloud instances (Japanese government cloud security program).",
+      "Automated operational workflows and improved system reliability while concurrently serving on the Fulfillment Engineering team.",
+      "Supported customer environments and collaborated with account teams, solution engineers, Professional Services, and Technical Support.",
       "Contributed to incident response and operational excellence across APAC.",
     ],
   },
