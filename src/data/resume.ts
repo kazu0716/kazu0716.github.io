@@ -32,7 +32,7 @@ export type OSSContribution = {
   tags: string[];
 };
 
-export type WritingKind = "Article" | "Blog" | "Patent" | "Paper";
+export type WritingKind = "Article" | "Blog" | "Patent" | "Paper" | "Talk";
 
 export type WritingItem = {
   title: string;
@@ -75,13 +75,13 @@ export const navItems = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Side Projects" },
   { href: "#open-source", label: "Open Source" },
-  { href: "#writing", label: "Writing" },
+  { href: "#writing", label: "Writing & Talks" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
 export const about: string[] = [
-  "I'm a software engineer specializing in ML platforms and infrastructure. Currently leading MLOps and infra initiatives at Turing, building Slurm-based training infrastructure and reusable multi-cloud platform patterns to accelerate autonomous-driving research.",
+  "I'm a software engineer specializing in ML platforms and infrastructure. Currently leading MLOps and infra initiatives at Turing, where a three-person platform team builds and operates 1,000+ GPUs of Slurm-based training infrastructure across AWS, GCP, and on-prem to accelerate autonomous-driving research.",
   "Before Turing, I worked across SRE at Splunk (Cisco), ML platform engineering at Preferred Networks on MATLANTIS, customer engineering at Google Cloud, and backend / SRE / security engineering at Recruit and NTT Communications.",
 ];
 
@@ -93,9 +93,10 @@ export const experience: Experience[] = [
     period: "Oct 2025 — Present",
     location: "Tokyo",
     highlights: [
-      "Lead ML platform and infrastructure initiatives for research workloads, focusing on automation, reliability, and developer productivity.",
-      "Build platform services and operational tooling for large-scale ML workloads.",
-      "Design reusable cloud infrastructure patterns and improve production readiness across teams.",
+      "Build and operate 1,000+ GPUs of training infrastructure across AWS, GCP, and on-prem with a three-person platform team — everything managed as code.",
+      "Stood up a 240-GPU (NVIDIA H200) Slurm cluster on Google Cloud in two weeks and have run it in production since, alongside a SageMaker HyperPod GPU cluster on AWS.",
+      "Scaled shared training storage from 36 TB to 504 TB of Lustre while in production, and built cross-cloud data pipelines spanning AWS, GCP, and Azure.",
+      "Keep large GPU fleets reliable with a small team: observability as code, incident response, self-healing node recovery, and runbook automation.",
     ],
   },
   {
@@ -181,6 +182,8 @@ export const skillGroups: SkillGroup[] = [
       "Kubernetes",
       "Docker",
       "Terraform",
+      "Terragrunt",
+      "Packer",
       "CDK",
       "Ansible",
     ],
@@ -211,7 +214,15 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "ML",
-    items: ["Vertex AI", "Slurm", "Databricks", "TensorFlow", "Dataflow"],
+    items: [
+      "Slurm",
+      "SageMaker HyperPod",
+      "Lustre",
+      "Vertex AI",
+      "Databricks",
+      "TensorFlow",
+      "Dataflow",
+    ],
   },
   {
     title: "Networking",
@@ -329,6 +340,24 @@ export const oss: OSSContribution[] = [
 ];
 
 export const writing: WritingItem[] = [
+  {
+    title:
+      "3人で1000GPU超を統合運用する？マルチクラウド＆オンプレを跨ぐ、構築と運用のリアル！",
+    url: "https://www.cnia.io/pek2026/sessions/b824c064-cd52-428d-a00d-cd62470e9093/",
+    outlet: "Platform Engineering Kaigi 2026",
+    date: "2026-09",
+    kind: "Talk",
+    lang: "ja",
+  },
+  {
+    title:
+      "今度はムンバイだ！Google Cloudだ！240 GPUのSlurmクラスタを2週間で立ち上げ、4ヶ月運用してみてわかった話",
+    url: "https://zenn.dev/turing_motors/articles/fd34d82e0e56d7",
+    outlet: "Zenn (Turing Tech Blog)",
+    date: "2026-07",
+    kind: "Article",
+    lang: "ja",
+  },
   {
     title:
       "Tokyo 30の舞台裏？AWSで作る！フルマネージドな大規模GPUクラスターの構築/運用のリアル",
