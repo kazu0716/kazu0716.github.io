@@ -110,7 +110,8 @@ export const experience: Experience[] = [
     location: "Tokyo",
     highlights: [
       "Built and operated cloud GPU clusters for autonomous-driving model training: a SageMaker HyperPod + Slurm + FSx for Lustre cluster on AWS (AWS CDK, Terraform), and a 240-GPU (NVIDIA H200) Slurm cluster on Google Cloud stood up in two weeks (Cluster Toolkit, Terraform / Terragrunt, Packer, Ansible).",
-      "Designed and developed a management system for large-scale training datasets.",
+      "Designed and developed a dataset-management system for large-scale training data, automating dataset download and cleanup on cluster storage.",
+      "Built the initial prototype for streaming video training data directly from S3 — parallel-fetch benchmarks and the initial pipeline design — before moving to the infrastructure team; other MLOps engineers completed the system and published it on the Turing Tech Blog.",
       "Automated detection and replacement of failed nodes on SageMaker HyperPod.",
     ],
   },
