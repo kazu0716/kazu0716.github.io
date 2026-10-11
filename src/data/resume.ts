@@ -444,6 +444,14 @@ export const writing: WritingItem[] = [
     lang: "ja",
   },
   {
+    title:
+      "Communication control method, communication control device, and computer program",
+    url: "https://patents.google.com/patent/US20210306253A1/en",
+    outlet: "US Patent Application — NTT Communications Corporation",
+    date: "2021-09",
+    kind: "Patent",
+  },
+  {
     title: "serverless frameworkを使って、cloud functionを立ち上げてみた",
     url: "https://kazu0716.hatenablog.com/entry/2020/09/21/003222",
     outlet: "EAFP (personal blog)",
@@ -471,24 +479,16 @@ export const writing: WritingItem[] = [
     title: "Black Hat USA 2018 / DEFCON 26 へ参加して来ました",
     url: "https://techblog.recruit.co.jp/article-148/",
     outlet: "Recruit Tech Blog",
-    date: "2018",
+    date: "2018-08",
     kind: "Article",
     lang: "ja",
   },
   {
     title:
-      "Communication control method, communication control device, and computer program",
-    url: "https://patents.google.com/patent/US20210306253A1/en",
-    outlet: "US Patent Application — NTT Communications Corporation",
-    date: "2017-09",
-    kind: "Patent",
-  },
-  {
-    title:
       "小特集 3-2 バックボーンネットワークにおけるセキュリティの現状と対策",
     url: "https://app.journal.ieice.org/trial/100_3/k100_3_180/index.html",
-    outlet: "IEICE Communications Society Magazine",
-    date: "2017",
+    outlet: "The Journal of the IEICE",
+    date: "2017-03",
     kind: "Paper",
     lang: "ja",
   },

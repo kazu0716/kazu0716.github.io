@@ -43,8 +43,9 @@ export default function Hero() {
         </li>
         <li className="relative pl-[18px]">
           <span className="absolute left-0 top-0 text-orange">▸</span>
-          Led 200+ enterprise engagements at Google Cloud — earned the 2022
-          Japan Award (Most Creative Collateral) for architectural prototypes.
+          Resolved 200+ technical issues across enterprise engagements at
+          Google Cloud — earned the 2022 Japan Award (Most Creative
+          Collateral) for architectural prototypes.
         </li>
       </ul>
 
