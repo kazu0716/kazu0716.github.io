@@ -3,14 +3,25 @@ export type SkillGroup = {
   items: string[];
 };
 
-export type Experience = {
+/** A stint on one team within the same org and role (an internal move). */
+export type Team = {
+  name: string;
+  period: string;
+  highlights: string[];
+};
+
+type ExperienceBase = {
   role: string;
   org: string;
   orgUrl?: string;
   period: string;
   location: string;
-  highlights: string[];
 };
+
+/** Either a single position with highlights, or the same role across
+ *  several teams (newest first) — rendered as a timeline under one org. */
+export type Experience = ExperienceBase &
+  ({ highlights: string[]; teams?: never } | { teams: Team[]; highlights?: never });
 
 export type Project = {
   name: string;
@@ -89,30 +100,33 @@ export const about: string[] = [
 
 export const experience: Experience[] = [
   {
-    role: "Staff Software Engineer — Infrastructure",
+    role: "Staff Software Engineer",
     org: "Turing, Inc.",
     orgUrl: "https://tur.ing/en/",
-    period: "Jul 2026 — Present",
+    period: "Oct 2025 — Present",
     location: "Tokyo",
-    highlights: [
-      "Build and operate Slurm-based GPU training clusters — 1,000+ GPUs across on-prem, a domestic GPU cloud, AWS, and Google Cloud — with a small infrastructure team supporting fully autonomous driving development.",
-      "Extend IaC and CI/CD (Terraform, Terragrunt, GitHub Actions) from the clouds to existing environments, splitting node configuration across boot images (Packer), startup scripts, and Ansible, and rolling out changes by draining nodes first to limit impact on training jobs.",
-      "Worked with AWS to isolate FSx for Lustre I/O stalls on SageMaker HyperPod and cut over to a rebuilt cluster on custom AMIs; completed a blue-green migration of the Google Cloud cluster's Managed Lustre to a larger instance.",
-      "Make room for improvement work with observability as code (Datadog), runbooks built from incident records, and AI-assisted first-pass investigation — while operators still assess impact on shared infrastructure and decide what to adopt.",
-      "Share platform knowledge through user guides written for both people and AI agents, and internal infrastructure study sessions.",
-    ],
-  },
-  {
-    role: "Staff Software Engineer — MLOps",
-    org: "Turing, Inc.",
-    orgUrl: "https://tur.ing/en/",
-    period: "Oct 2025 — Jun 2026",
-    location: "Tokyo",
-    highlights: [
-      "Built and operated cloud GPU clusters for autonomous-driving model training: a SageMaker HyperPod + Slurm + FSx for Lustre cluster on AWS (AWS CDK, Terraform), and a 240-GPU (NVIDIA H200) Slurm cluster on Google Cloud stood up in two weeks (Cluster Toolkit, Terraform / Terragrunt, Packer, Ansible).",
-      "Designed and developed a dataset-management system for large-scale training data, automating dataset download and cleanup on cluster storage.",
-      "Built the initial prototype for streaming video training data directly from S3 — parallel-fetch benchmarks and the initial pipeline design — before moving to the infrastructure team; other MLOps engineers completed the system and published it on the Turing Tech Blog.",
-      "Automated detection and replacement of failed nodes on SageMaker HyperPod.",
+    teams: [
+      {
+        name: "Infrastructure team",
+        period: "Jul 2026 — Present",
+        highlights: [
+          "Build and operate Slurm-based GPU training clusters — 1,000+ GPUs across on-prem, a domestic GPU cloud, AWS, and Google Cloud — with a small infrastructure team supporting fully autonomous driving development.",
+          "Extend IaC and CI/CD (Terraform, Terragrunt, GitHub Actions) from the clouds to existing environments, splitting node configuration across boot images (Packer), startup scripts, and Ansible, and rolling out changes by draining nodes first to limit impact on training jobs.",
+          "Worked with AWS to isolate FSx for Lustre I/O stalls on SageMaker HyperPod and cut over to a rebuilt cluster on custom AMIs; completed a blue-green migration of the Google Cloud cluster's Managed Lustre to a larger instance.",
+          "Make room for improvement work with observability as code (Datadog), runbooks built from incident records, and AI-assisted first-pass investigation — while operators still assess impact on shared infrastructure and decide what to adopt.",
+          "Share platform knowledge through user guides written for both people and AI agents, and internal infrastructure study sessions.",
+        ],
+      },
+      {
+        name: "MLOps team",
+        period: "Oct 2025 — Jun 2026",
+        highlights: [
+          "Built and operated cloud GPU clusters for autonomous-driving model training: a SageMaker HyperPod + Slurm + FSx for Lustre cluster on AWS (AWS CDK, Terraform), and a 240-GPU (NVIDIA H200) Slurm cluster on Google Cloud stood up in two weeks (Cluster Toolkit, Terraform / Terragrunt, Packer, Ansible).",
+          "Designed and developed a dataset-management system for large-scale training data, automating dataset download and cleanup on cluster storage.",
+          "Built the initial prototype for streaming video training data directly from S3 — parallel-fetch benchmarks and the initial pipeline design — before moving to the infrastructure team; other MLOps engineers completed the system and published it on the Turing Tech Blog.",
+          "Automated detection and replacement of failed nodes on SageMaker HyperPod.",
+        ],
+      },
     ],
   },
   {
