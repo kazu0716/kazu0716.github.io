@@ -1,7 +1,7 @@
 # kazu0716.github.io
 
-Personal portfolio for **Kazuki Odo** — Staff Software Engineer (Infrastructure /
-ML Platform) at Turing.
+Personal portfolio for **Kazuki Odo** — Staff Software Engineer (AI
+Infrastructure) at Turing.
 
 Live: <https://kazu0716.github.io>
 

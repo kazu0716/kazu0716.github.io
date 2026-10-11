@@ -49,7 +49,7 @@ const svg = `
   <g transform="translate(80, 350)" font-family="IBM Plex Sans, -apple-system, system-ui, sans-serif" font-size="32">
     <text fill="#9da5b4">Staff Software Engineer</text>
     <text x="370" fill="#5c6370">·</text>
-    <text x="395" fill="#61afef">Infrastructure / ML Platform</text>
+    <text x="395" fill="#61afef">AI Infrastructure</text>
   </g>
 
   <!-- Tags -->

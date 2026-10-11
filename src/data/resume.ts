@@ -48,7 +48,7 @@ export type WritingItem = {
 export const profile = {
   name: "Kazuki Odo",
   title: "Staff Software Engineer",
-  subtitle: "Infrastructure / ML Platform",
+  subtitle: "AI Infrastructure",
   tags: ["Turing, Inc.", "Tokyo Area, Japan", "13+ years"],
   lead:
     "I turn complex technical challenges into scalable, business-aligned platforms. Full-stack, SRE/DRE, DevOps, and ML platform engineering across multi-cloud (AWS, GCP, Azure) and on-prem — from design to large-scale production.",
@@ -83,7 +83,7 @@ export const navItems = [
 ] as const;
 
 export const about: string[] = [
-  "I'm a software engineer specializing in GPU infrastructure and ML platforms. At Turing, I joined the MLOps team in October 2025 and moved to the infrastructure team in July 2026. Our small team builds and operates 1,000+ GPUs of Slurm-based training infrastructure across on-prem, a domestic GPU cloud, AWS, and Google Cloud for fully autonomous driving development.",
+  "I'm a software engineer specializing in AI infrastructure — GPU clusters and ML platforms. At Turing, I joined the MLOps team in October 2025 and moved to the infrastructure team in July 2026. Our small team builds and operates 1,000+ GPUs of Slurm-based training infrastructure across on-prem, a domestic GPU cloud, AWS, and Google Cloud for fully autonomous driving development.",
   "Before Turing, I worked across SRE at Splunk (Cisco), ML platform engineering at Preferred Networks on MATLANTIS, customer engineering at Google Cloud, and backend / SRE / security engineering at Recruit and NTT Communications.",
 ];
 
