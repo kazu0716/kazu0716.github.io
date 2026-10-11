@@ -31,8 +31,9 @@ export default function Hero() {
       <ul className="mb-7 flex flex-col gap-1.5 text-cream-2">
         <li className="relative pl-[18px]">
           <span className="absolute left-0 top-0 text-orange">▸</span>
-          Rapidly delivered ML training infrastructure and operational
-          improvements for large-scale research workloads.
+          Stood up a 240-GPU Slurm cluster on Google Cloud in two weeks; now
+          operate 1,000+ GPUs across on-prem and multi-cloud with a small
+          infrastructure team.
         </li>
         <li className="relative pl-[18px]">
           <span className="absolute left-0 top-0 text-orange">▸</span>
@@ -42,8 +43,9 @@ export default function Hero() {
         </li>
         <li className="relative pl-[18px]">
           <span className="absolute left-0 top-0 text-orange">▸</span>
-          Led 200+ enterprise engagements at Google Cloud — earned the 2022
-          Japan Award (Most Creative Collateral) for architectural prototypes.
+          Resolved 200+ technical issues across enterprise engagements at
+          Google Cloud — earned the 2022 Japan Award (Most Creative
+          Collateral) for architectural prototypes.
         </li>
       </ul>
 

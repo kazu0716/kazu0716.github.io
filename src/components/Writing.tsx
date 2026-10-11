@@ -13,15 +13,15 @@ const kindStyle: Record<WritingKind, string> = {
 
 const PAGE_SIZE = 5;
 
+/** The whole row is clickable via a stretched pseudo-element on the title
+ *  link; secondary links sit above it (`relative z-10`) so they stay
+ *  separately clickable without nesting anchors. */
 function WritingRow({ item, first }: { item: WritingItem; first: boolean }) {
   return (
-    <li className={`py-3.5 ${first ? "" : "border-t border-ink-3"}`}>
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group grid gap-1 sm:grid-cols-[88px_1fr] sm:items-baseline sm:gap-5"
-      >
+    <li
+      className={`relative py-3.5 ${first ? "" : "border-t border-ink-3"}`}
+    >
+      <div className="grid gap-1 sm:grid-cols-[88px_1fr] sm:items-baseline sm:gap-5">
         <span className="font-mono text-[0.78rem] text-yellow">
           {item.date}
         </span>
@@ -41,21 +41,41 @@ function WritingRow({ item, first }: { item: WritingItem; first: boolean }) {
                 JA only
               </span>
             )}
-            <span className="text-cream-1 transition-colors group-hover:text-blue">
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="peer text-cream-1 transition-colors after:absolute after:inset-0 hover:text-blue focus-visible:text-blue"
+            >
               {item.title}
-            </span>
+            </a>
             <span
               aria-hidden="true"
-              className="font-mono text-orange transition-transform group-hover:translate-x-0.5"
+              className="pointer-events-none font-mono text-orange transition-transform peer-hover:translate-x-0.5 peer-focus-visible:translate-x-0.5"
             >
               →
             </span>
           </div>
           <span className="font-mono text-[0.78rem] text-cream-4">
             {item.outlet}
+            {item.links?.map((link) => (
+              <span key={link.url}>
+                <span aria-hidden="true" className="mx-1.5">
+                  ·
+                </span>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative z-10 border-b border-dotted border-cream-4/50 text-cream-2 transition-colors hover:border-blue hover:text-blue"
+                >
+                  {link.label} ↗
+                </a>
+              </span>
+            ))}
           </span>
         </div>
-      </a>
+      </div>
     </li>
   );
 }
