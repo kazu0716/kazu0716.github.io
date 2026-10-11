@@ -31,8 +31,9 @@ export default function Hero() {
       <ul className="mb-7 flex flex-col gap-1.5 text-cream-2">
         <li className="relative pl-[18px]">
           <span className="absolute left-0 top-0 text-orange">▸</span>
-          Rapidly delivered ML training infrastructure and operational
-          improvements for large-scale research workloads.
+          Stood up a 240-GPU Slurm cluster on Google Cloud in two weeks; now
+          operate 1,000+ GPUs across on-prem and multi-cloud with a small
+          infrastructure team.
         </li>
         <li className="relative pl-[18px]">
           <span className="absolute left-0 top-0 text-orange">▸</span>

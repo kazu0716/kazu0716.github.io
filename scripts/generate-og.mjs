@@ -49,22 +49,22 @@ const svg = `
   <g transform="translate(80, 350)" font-family="IBM Plex Sans, -apple-system, system-ui, sans-serif" font-size="32">
     <text fill="#9da5b4">Staff Software Engineer</text>
     <text x="370" fill="#5c6370">·</text>
-    <text x="395" fill="#61afef">MLOps / Infrastructure</text>
+    <text x="395" fill="#61afef">Infrastructure / ML Platform</text>
   </g>
 
   <!-- Tags -->
   <g transform="translate(80, 425)" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20">
     <g>
-      <rect x="0" y="0" width="160" height="36" rx="18" fill="#2c313a" stroke="#3e4451"/>
-      <text x="80" y="23" fill="#9da5b4" text-anchor="middle">Turing, Inc.</text>
+      <rect x="0" y="0" width="176" height="36" rx="18" fill="#2c313a" stroke="#3e4451"/>
+      <text x="88" y="23" fill="#9da5b4" text-anchor="middle">Turing, Inc.</text>
     </g>
-    <g transform="translate(176, 0)">
-      <rect x="0" y="0" width="170" height="36" rx="18" fill="#2c313a" stroke="#3e4451"/>
-      <text x="85" y="23" fill="#9da5b4" text-anchor="middle">Tokyo Area, Japan</text>
+    <g transform="translate(192, 0)">
+      <rect x="0" y="0" width="232" height="36" rx="18" fill="#2c313a" stroke="#3e4451"/>
+      <text x="116" y="23" fill="#9da5b4" text-anchor="middle">Tokyo Area, Japan</text>
     </g>
-    <g transform="translate(362, 0)">
-      <rect x="0" y="0" width="130" height="36" rx="18" fill="#2c313a" stroke="#3e4451"/>
-      <text x="65" y="23" fill="#9da5b4" text-anchor="middle">13+ years</text>
+    <g transform="translate(440, 0)">
+      <rect x="0" y="0" width="140" height="36" rx="18" fill="#2c313a" stroke="#3e4451"/>
+      <text x="70" y="23" fill="#9da5b4" text-anchor="middle">13+ years</text>
     </g>
   </g>
 

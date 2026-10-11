@@ -41,12 +41,14 @@ export type WritingItem = {
   date: string;
   kind: WritingKind;
   lang?: "ja";
+  /** Secondary links shown next to the outlet (e.g. the event's session page). */
+  links?: { label: string; url: string }[];
 };
 
 export const profile = {
   name: "Kazuki Odo",
   title: "Staff Software Engineer",
-  subtitle: "MLOps / Infrastructure",
+  subtitle: "Infrastructure / ML Platform",
   tags: ["Turing, Inc.", "Tokyo Area, Japan", "13+ years"],
   lead:
     "I turn complex technical challenges into scalable, business-aligned platforms. Full-stack, SRE/DRE, DevOps, and ML platform engineering across multi-cloud (AWS, GCP, Azure) and on-prem — from design to large-scale production.",
@@ -81,21 +83,35 @@ export const navItems = [
 ] as const;
 
 export const about: string[] = [
-  "I'm a software engineer specializing in ML platforms and infrastructure. Currently leading MLOps and infra initiatives at Turing, where a three-person platform team builds and operates 1,000+ GPUs of Slurm-based training infrastructure across AWS, GCP, and on-prem to accelerate autonomous-driving research.",
+  "I'm a software engineer specializing in GPU infrastructure and ML platforms. At Turing, I joined the MLOps team in October 2025 and moved to the infrastructure team in July 2026. Our small team builds and operates 1,000+ GPUs of Slurm-based training infrastructure across on-prem, a domestic GPU cloud, AWS, and Google Cloud for fully autonomous driving development.",
   "Before Turing, I worked across SRE at Splunk (Cisco), ML platform engineering at Preferred Networks on MATLANTIS, customer engineering at Google Cloud, and backend / SRE / security engineering at Recruit and NTT Communications.",
 ];
 
 export const experience: Experience[] = [
   {
-    role: "Staff Software Engineer — MLOps / Infrastructure",
+    role: "Staff Software Engineer — Infrastructure",
     org: "Turing, Inc.",
     orgUrl: "https://tur.ing/en/",
-    period: "Oct 2025 — Present",
+    period: "Jul 2026 — Present",
     location: "Tokyo",
     highlights: [
-      "Build and operate 1,000+ GPUs of training infrastructure across AWS, GCP, and on-prem with a three-person platform team — from standing up a 240-GPU (NVIDIA H200) Slurm cluster on Google Cloud in two weeks, to scaling Lustre storage from 36 TB to 504 TB in production and running cross-cloud data pipelines — everything managed as code.",
-      "Develop dataset-management software in Go — gRPC / REST services that automate dataset download, placement, and cleanup across every cluster — plus high-throughput downloaders and streaming data loaders for large-scale video training data.",
-      "Keep large GPU fleets reliable with a small team: observability as code, incident response, self-healing node recovery, and runbook automation.",
+      "Build and operate Slurm-based GPU training clusters — 1,000+ GPUs across on-prem, a domestic GPU cloud, AWS, and Google Cloud — with a small infrastructure team supporting fully autonomous driving development.",
+      "Extend IaC and CI/CD (Terraform, Terragrunt, GitHub Actions) from the clouds to existing environments, splitting node configuration across boot images (Packer), startup scripts, and Ansible, and rolling out changes by draining nodes first to limit impact on training jobs.",
+      "Worked with AWS to isolate FSx for Lustre I/O stalls on SageMaker HyperPod and cut over to a rebuilt cluster on custom AMIs; completed a blue-green migration of the Google Cloud cluster's Managed Lustre to a larger instance.",
+      "Make room for improvement work with observability as code (Datadog), runbooks built from incident records, and AI-assisted first-pass investigation — while operators still assess impact on shared infrastructure and decide what to adopt.",
+      "Share platform knowledge through user guides written for both people and AI agents, and internal infrastructure study sessions.",
+    ],
+  },
+  {
+    role: "Staff Software Engineer — MLOps",
+    org: "Turing, Inc.",
+    orgUrl: "https://tur.ing/en/",
+    period: "Oct 2025 — Jun 2026",
+    location: "Tokyo",
+    highlights: [
+      "Built and operated cloud GPU clusters for autonomous-driving model training: a SageMaker HyperPod + Slurm + FSx for Lustre cluster on AWS (AWS CDK, Terraform), and a 240-GPU (NVIDIA H200) Slurm cluster on Google Cloud stood up in two weeks (Cluster Toolkit, Terraform / Terragrunt, Packer, Ansible).",
+      "Designed and developed a management system for large-scale training datasets.",
+      "Automated detection and replacement of failed nodes on SageMaker HyperPod.",
     ],
   },
   {
@@ -126,7 +142,7 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: "Customer Engineer — Google Cloud",
+    role: "Customer Engineer — Google Cloud (Gaming, Media & Entertainment)",
     org: "Google Cloud Japan",
     orgUrl: "https://cloud.google.com/",
     period: "Jun 2021 — Mar 2023",
@@ -217,6 +233,7 @@ export const skillGroups: SkillGroup[] = [
     items: [
       "Slurm",
       "SageMaker HyperPod",
+      "Cluster Toolkit",
       "Lustre",
       "Vertex AI",
       "Databricks",
@@ -251,8 +268,10 @@ export const skillGroups: SkillGroup[] = [
     title: "Practices",
     items: [
       "SRE",
+      "Platform Engineering",
       "DevOps",
       "Incident Response",
+      "AI-assisted Operations",
       "Agile",
       "Stakeholder Collaboration",
     ],
@@ -325,6 +344,13 @@ export const education = {
 
 export const oss: OSSContribution[] = [
   {
+    name: "DataDog/integrations-core",
+    url: "https://github.com/DataDog/integrations-core/issues?q=is%3Aissue%20author%3Akazu0716",
+    description:
+      "Reported bugs in the Lustre and Slurm integrations found while monitoring GPU clusters — missing client stats on FSx for Lustre (Lustre 2.15.x) and noisy Slurm error logging. Both were fixed upstream (Agent 7.83 / 7.85).",
+    tags: ["Datadog", "Lustre", "Slurm", "Observability"],
+  },
+  {
     name: "cloudspannerecosystem/spanner-stress-test-demo",
     url: "https://github.com/cloudspannerecosystem/spanner-stress-test-demo",
     description: "Stress-testing demo for Cloud Spanner workloads.",
@@ -342,12 +368,36 @@ export const oss: OSSContribution[] = [
 export const writing: WritingItem[] = [
   {
     title:
+      "Slurm運用に慣れた私たちが、AWSのマネージドSlurm運用でつまずいた6つのこと",
+    url: "https://zenn.dev/turing_motors/articles/hyperpod-again-part2-hyperpod-slurm",
+    outlet: "Zenn (Turing Tech Blog)",
+    date: "2026-10",
+    kind: "Article",
+    lang: "ja",
+  },
+  {
+    title:
+      "Full-Managed のその奥は？ FSx for Lustre の I/O 問題を AWS と一緒に切り分ける",
+    url: "https://zenn.dev/turing_motors/articles/hyperpod-again-part1-efa-lustre",
+    outlet: "Zenn (Turing Tech Blog)",
+    date: "2026-09",
+    kind: "Article",
+    lang: "ja",
+  },
+  {
+    title:
       "3人で1000GPU超を統合運用する？マルチクラウド＆オンプレを跨ぐ、構築と運用のリアル！",
-    url: "https://www.cnia.io/pek2026/sessions/b824c064-cd52-428d-a00d-cd62470e9093/",
+    url: "https://speakerdeck.com/kazukun0716/3-hito-de-1000gpu-chou-o-tougou-unyou-suru-o-matagu-kouchiku-to-unyou-no-riaru",
     outlet: "Platform Engineering Kaigi 2026",
     date: "2026-09",
     kind: "Talk",
     lang: "ja",
+    links: [
+      {
+        label: "session",
+        url: "https://www.cnia.io/pek2026/sessions/b824c064-cd52-428d-a00d-cd62470e9093/",
+      },
+    ],
   },
   {
     title:
